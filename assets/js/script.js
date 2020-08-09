@@ -15,8 +15,8 @@ $(document).ready(function () {
 
     /* Data */
     $("header.resume-header").load('/includes/header' + lang + '.html');
-    $("section.resume-section").load('/includes/resume-section' + lang + '.html');
-    
+    $("section.summary-section").load('/includes/summary-section' + lang + '.html');
+
     $("section.experience-section").load('/includes/experience-section' + lang + '.html');
     $("section.skills-section").load('/includes/skills-section' + lang + '.html');
 
