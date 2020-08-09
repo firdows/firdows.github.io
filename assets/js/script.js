@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     var pathname = window.location.pathname;
     var res = pathname.split("/");
-    var lang = res[1] != '' ? "-" + res[1] : '';
+    var lang = res[1] == 'en' ? "-" + res[1] : '';
 
     /* Data */
     $("header.resume-header").load('/includes/header' + lang + '.html');
