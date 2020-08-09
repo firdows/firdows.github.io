@@ -2,3 +2,27 @@ body {
     font-family: 'Prompt', sans-serif;
     font-size: 1rem;
 }
+
+/* .navbar { 
+    padding: 0rem 1rem;
+} */
+
+/* .navbar-nav .nav-link {
+    display: block;
+    padding: 0;
+} */
+
+.nav-item.active a {
+    font-weight: bold;
+}
+
+a.pop {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+}
+
+a.pop img{
+    width: auto;
+    height: 264px;
+}
