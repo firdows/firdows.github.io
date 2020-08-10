@@ -16,13 +16,15 @@ body {
     font-weight: bold;
 }
 
-a.pop {
-    float: left;
-    width: 100%;
-    overflow: hidden;
+.pop {
+    /* float: left;
+    width: 100%; */
+    overflow: hidden;    
 }
 
-a.pop img{
-    width: auto;
+.pop img{
+    /* width: auto; */
     height: 264px;
+    cursor: pointer;
+    background: #ccc;
 }

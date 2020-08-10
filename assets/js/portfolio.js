@@ -26,6 +26,7 @@ $(document).ready(function () {
             $.get('/includes/' + lang + 'portfolio-' + value + '.html', function (data) {
                 $("section.portfolio-section .resume-timeline").append(data);
                 popImg();
+                newSort();
             });
         });
 
@@ -48,13 +49,20 @@ $(document).ready(function () {
 
 });
 
-function popImg() {    
+function newSort() {
+    $('section.portfolio-section .resume-timeline article').sort(function (a, b) {
+        console.log("New sort");
+        return a.id > b.id;
+    }).appendTo('.section.portfolio-section .resume-timeline');
+}
+
+function popImg() {
     // $('.carousel-item  img#images').viewer();
     $('.gallery-items').viewer();
     // $('.pop').unbind('click');
     // $('.pop').on('click', function () {
-    //     $('.imagepreview').attr('src', $(this).find('img').attr('src'));
-    //     $('#imagemodal').modal('show');
+        // $('.imagepreview').attr('src', $(this).find('img').attr('src'));
+        // $('#imagemodal').modal('show');
     //     return false;
     // });
     // var viewer = ImageViewer();
