@@ -28,3 +28,12 @@ body {
     cursor: pointer;
     background: #ccc;
 }
+
+.splah-screen{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    background: #328998;    
+    color: #fff;
+}

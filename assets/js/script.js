@@ -9,22 +9,37 @@ $(document).ready(function () {
         $loading.hide();
         //console.log("Load Success");
     });
-    let searchParams = new URLSearchParams(window.location.search)
-    let paramLang = searchParams.get('lang')
+    let searchParams = new URLSearchParams(window.location.search);
+    let paramLang = searchParams.get('lang');
+    let accessKey = searchParams.get('key');
+    
+    var pathname = window.location.pathname;
+    var res = pathname.split("/");
 
     if (paramLang) {
         localStorage.languege = paramLang;
     } else if (!localStorage.languege) {
         localStorage.languege = '';
     }
+    var date = new Date();
+    date.setDate(date.getDate() + 1);
+    if (accessKey == date.getDate()) {
+        localStorage.accessKey = 1;
+        window.location.replace("/"+res[1]);
+    } else if (!localStorage.accessKey) {
+        localStorage.accessKey = 0;
+    }
 
     // console.log(param);
     //console.log(localStorage.languege);
 
 
-    var pathname = window.location.pathname;
-    var res = pathname.split("/");
+   
     lang = localStorage.languege == 'en' ? localStorage.languege + "/" : '';
+
+    if (localStorage.accessKey != 1) {
+        $("article.resume-wrapper").load('/splash-screen.html');
+    }
 
 
     /* Header & Menu */
@@ -35,7 +50,7 @@ $(document).ready(function () {
         $('ul.main-menu').find('li.nav-item a[href="/' + res[1] + '"]').parent().addClass('active');
 
         var newLang = localStorage.languege;
-        newLang=newLang?newLang:'th';
+        newLang = newLang ? newLang : 'th';
         // console.log(newLang);
         $('ul.lang-menu').find('li.nav-item').removeClass('active');
         $('ul.lang-menu').find('li.nav-item a[href*="' + newLang + '"]').parent().addClass('active');
