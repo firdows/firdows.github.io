@@ -52,6 +52,7 @@ $(document).ready(function () {
 function newSort() {
     $('section.portfolio-section .resume-timeline article').sort(function (a, b) {
         console.log("New sort");
+        console.log(a.id +">"+ b.id);
         return a.id > b.id;
     }).appendTo('.section.portfolio-section .resume-timeline');
 }
