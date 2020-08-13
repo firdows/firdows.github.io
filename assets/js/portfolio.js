@@ -20,7 +20,7 @@ $(document).ready(function () {
 
     /* Data */
     $("section.portfolio-section").load('/includes/' + lang + 'portfolio-section.html', function () {
-        var arrYear = [2020, 2017];
+        var arrYear = [2020, 2017,2012,2010];
 
         $.each(arrYear, function (index, value) {
             $.get('/includes/' + lang + 'portfolio-' + value + '.html', function (data) {
