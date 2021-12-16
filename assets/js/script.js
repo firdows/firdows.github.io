@@ -35,6 +35,7 @@ $(document).ready(function () {
         localStorage.removeItem('accessKey');
     } else if (logout) {
         localStorage.removeItem('accessKey');
+        window.location.replace("/");
     }
 
     // console.log(param);
