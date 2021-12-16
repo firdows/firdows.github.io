@@ -26,8 +26,8 @@ $(document).ready(function () {
 
     var nextDay = date.getDate() + 1;
     date.setDate(nextDay);
-    console.log(nextDay);
-    console.log(logout);
+    // console.log(nextDay);
+    // console.log(logout);
     if (accessKey == nextDay) {
         localStorage.accessKey = nextDay;
         window.location.replace("/" + res[1]);
