@@ -19,12 +19,13 @@ body {
 .pop {
     /* float: left;
     width: 100%; */
-    overflow: hidden;    
+    overflow: hidden;   
+    height: 210px; 
 }
 
 .pop img{
     /* width: auto; */
-    height: 264px;
+    width: 300px;    
     cursor: pointer;
     background: #ccc;
 }
