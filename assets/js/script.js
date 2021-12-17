@@ -12,7 +12,8 @@ $(document).ready(function () {
     let searchParams = new URLSearchParams(window.location.search);
     let paramLang = searchParams.get('lang');
     let accessKey = searchParams.get('key');
-    
+    let logout = searchParams.get('logout');
+
     var pathname = window.location.pathname;
     var res = pathname.split("/");
 
@@ -22,22 +23,29 @@ $(document).ready(function () {
         localStorage.languege = '';
     }
     var date = new Date();
-    date.setDate(date.getDate() + 1);
-    if (accessKey == date.getDate()) {
-        localStorage.accessKey = 1;
-        window.location.replace("/"+res[1]);
+
+    var nextDay = date.getDate() + 1;
+    date.setDate(nextDay);
+    // console.log(nextDay);
+    // console.log(logout);
+    if (accessKey == nextDay) {
+        localStorage.accessKey = nextDay;
+        window.location.replace("/" + res[1]);
     } else if (!localStorage.accessKey) {
-        localStorage.accessKey = 0;
+        localStorage.removeItem('accessKey');
+    } else if (logout) {
+        localStorage.removeItem('accessKey');
+        window.location.replace("/");
     }
 
     // console.log(param);
     //console.log(localStorage.languege);
 
 
-   
+
     lang = localStorage.languege == 'en' ? localStorage.languege + "/" : '';
 
-    if (localStorage.accessKey != 1) {
+    if (localStorage.accessKey != nextDay) {
         $("article.resume-wrapper").load('/splash-screen.html');
     }
 
